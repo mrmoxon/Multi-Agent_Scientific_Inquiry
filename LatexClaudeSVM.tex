@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath} 
+
+\begin{document}
+
+\begin{align}
+\frac{\partial \mathcal{L}(w, w_0, \xi, \lambda, \mu)}{\partial w} &= 0 \quad \Rightarrow \quad w = \sum_{i=1}^{N} \lambda_i y_i x_i \label{eq:4} \\
+\frac{\partial \mathcal{L}(w, w_0, \xi, \lambda, \mu)}{\partial w_0} &= 0 \quad \Rightarrow \quad \sum_{i=1}^{N} \lambda_i y_i = 0 \label{eq:5} \\
+\frac{\partial \mathcal{L}(w, w_0, \xi, \lambda, \mu)}{\partial \xi_i} &= 0 \quad \Rightarrow \quad C - \mu_i - \lambda_i = 0 \label{eq:6}
+\end{align}
+
+Putting \eqref{eq:4}, \eqref{eq:5} and \eqref{eq:6} into $\mathcal{L}(w, w_0, \xi, \lambda, \mu)$, we have
+\begin{align}
+\mathcal{L}(\lambda, \xi) &= \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{N} \xi_i - \sum_{i=1}^{N} \mu_i \xi_i - \sum_{i=1}^{N} \lambda_i(y_i (w^T x_i + w_0) - 1 + \xi_i) \\
+&= \frac{1}{2} \sum_{i=1}^{N} \sum_{j=1}^{N} \lambda_i \lambda_j y_i y_j x_i^T x_j + C \sum_{i=1}^{N} \xi_i - \sum_{i=1}^{N} \mu_i \xi_i - \sum_{i=1}^{N} \lambda_i y_i w^T x_i - \sum_{i=1}^{N} \lambda_i y_i w_0 + \sum_{i=1}^{N} \lambda_i - \sum_{i=1}^{N} \lambda_i \xi_i \\
+&= \frac{1}{2} \sum_{i=1}^{N} \sum_{j=1}^{N} \lambda_i \lambda_j y_i y_j x_i^T x_j + C \sum_{i=1}^{N} \xi_i - \sum_{i=1}^{N} \mu_i \xi_i - \sum_{i=1}^{N} \sum_{j=1}^{N} \lambda_i \lambda_j y_i y_j x_i^T x_j - \sum_{i=1}^{N} \lambda_i y_i w_0 + \sum_{i=1}^{N} \lambda_i - \sum_{i=1}^{N} (C - \mu_i) \xi_i \\
+&= \sum_{i=1}^{N} \lambda_i - \frac{1}{2} \sum_{i=1}^{N} \sum_{j=1}^{N} \lambda_i \lambda_j y_i y_j x_i^T x_j.
+\end{align}
+
+\end{document}
